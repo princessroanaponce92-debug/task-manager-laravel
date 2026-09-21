@@ -9,9 +9,8 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all();
-
-        return view('tasks.index', compact('tasks'));
+        $tasks = Task::orderBy('created_at', 'desc')->get();
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 
     public function create()
@@ -21,51 +20,60 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'task_name' => 'required',
-            'description' => 'nullable',
-            'status' => 'required',
+        $validated = $request->validate([
+            'task_name' => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000',
             'due_date' => 'nullable|date',
         ]);
 
-        Task::create([
-            'task_name' => $request->task_name,
-            'description' => $request->description,
-            'status' => $request->status,
-            'due_date' => $request->due_date,
-        ]);
+        $validated['status'] = 'Pending';
+        Task::create($validated);
 
-        return redirect()->route('tasks.index');
+        return redirect()->intended('/tasks')->with('success', '✅ Task created successfully!');
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', ['task' => $task]);
     }
 
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('task'));
+        return view('tasks.edit', ['task' => $task]);
     }
 
     public function update(Request $request, Task $task)
     {
-        $request->validate([
-            'task_name' => 'required',
-            'description' => 'nullable',
-            'status' => 'required',
+        $validated = $request->validate([
+            'task_name' => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000',
             'due_date' => 'nullable|date',
         ]);
 
-        $task->update([
-            'task_name' => $request->task_name,
-            'description' => $request->description,
-            'status' => $request->status,
-            'due_date' => $request->due_date,
-        ]);
-
-        return redirect()->route('tasks.index');
+        $task->update($validated);
+        
+        return back()->with('success', '✏️ Task updated successfully!');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
+        
+        return back()->with('success', '🗑️ Task deleted successfully!');
+    }
 
-        return redirect()->route('tasks.index');
+    public function updateStatus(Task $task)
+    {
+        if ($task->status === 'Pending') {
+            $task->status = 'Completed';
+            $message = '✅ Task marked as completed!';
+        } else {
+            $task->status = 'Pending';
+            $message = '⏳ Task marked as pending!';
+        }
+        
+        $task->save();
+        
+        return back()->with('success', $message);
     }
 }
