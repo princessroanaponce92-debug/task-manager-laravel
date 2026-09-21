@@ -29,7 +29,7 @@
 ### Steps
 1. Clone the repository
 ```bash
-   git clone [[your-repo-url](https://github.com/princessroanaponce92-debug/task-manager-laravel.git)]
+   git clone (https://github.com/princessroanaponce92-debug/task-manager-laravel.git)]
    cd task-manager
 ```
 
