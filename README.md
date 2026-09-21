@@ -1,10 +1,10 @@
 # Personal Task Manager - Laravel
 
 ## Project Information
-- **Project Code:** WST21-PM-2026-SF
-- **Student Name:** Princess Roana D. Ponce
-- **Course & Year:** BSIT-2
-- **Database Used:** MySQL
+- Project Code: WST21-PM-2026-SF
+- Student Name: Princess Roana D. Ponce
+- Course & Year: BSIT-2 Section-01
+- Database Used: MySQL
 
 ## Features
 - ✅ Add Task
@@ -29,7 +29,7 @@
 ### Steps
 1. Clone the repository
 ```bash
-   git clone [your-repo-url]
+   git clone [[your-repo-url](https://github.com/princessroanaponce92-debug/task-manager-laravel.git)]
    cd task-manager
 ```
 
@@ -88,12 +88,12 @@ task-manager/
 
 ## How It Works
 1. User navigates to `/tasks` to view all tasks
-2. Click **Add New Task** to create a new task
+2. Click "Add New" Task to create a new task
 3. Enter task details (name, description, due date)
 4. Tasks display in a table with status badge
-5. Use **Edit** button to modify task
-6. Use **✓ Complete** to toggle status
-7. Use **Delete** to remove task
+5. Use "Edit" button to modify task
+6. Use "Complete" to toggle status
+7. Use "Delete" to remove task
 
 ## Author
 Princess Roana D. Ponce
