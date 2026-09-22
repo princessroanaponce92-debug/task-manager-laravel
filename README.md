@@ -7,11 +7,11 @@
 - Database Used: MySQL
 
 ## Features
-- ✅ Add Task
-- ✅ View Tasks
-- ✅ Edit Task
-- ✅ Delete Task
-- ✅ Update Status (Pending/Completed)
+-  Add Task
+-  View Tasks
+-  Edit Task
+-  Delete Task
+-  Update Status (Pending/Completed)
 
 ## Technologies Used
 - **Framework:** Laravel 11
@@ -29,7 +29,11 @@
 ### Steps
 1. Clone the repository
 ```bash
+<<<<<<< HEAD
    git clone (https://github.com/princessroanaponce92-debug/task-manager-laravel.git)]
+=======
+   git clone [https://github.com/princessroanaponce92-debug/task-manager-laravel.git]
+>>>>>>> 0b6de44 (Using SQLite - stable and working perfectly)
    cd task-manager
 ```
 
@@ -88,11 +92,19 @@ task-manager/
 
 ## How It Works
 1. User navigates to `/tasks` to view all tasks
+<<<<<<< HEAD
 2. Click "Add New" Task to create a new task
 3. Enter task details (name, description, due date)
 4. Tasks display in a table with status badge
 5. Use "Edit" button to modify task
 6. Use "Complete" to toggle status
+=======
+2. Click "Add New Task" to create a new task
+3. Enter task details (name, description, due date)
+4. Tasks display in a table with status badge
+5. Use "Edit" button to modify task
+6. Use " Complete" to toggle status
+>>>>>>> 0b6de44 (Using SQLite - stable and working perfectly)
 7. Use "Delete" to remove task
 
 ## Author

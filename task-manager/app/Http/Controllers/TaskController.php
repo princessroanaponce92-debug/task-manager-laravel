@@ -10,6 +10,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::orderBy('created_at', 'desc')->get();
+
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
@@ -27,9 +28,11 @@ class TaskController extends Controller
         ]);
 
         $validated['status'] = 'Pending';
+
         Task::create($validated);
 
-        return redirect()->intended('/tasks')->with('success', '✅ Task created successfully!');
+        // Redirect to /tasks while keeping the current Codespaces URL
+        return response('', 303)->header('Location', '/tasks');
     }
 
     public function show(Task $task)
@@ -51,14 +54,14 @@ class TaskController extends Controller
         ]);
 
         $task->update($validated);
-        
+
         return back()->with('success', '✏️ Task updated successfully!');
     }
 
     public function destroy(Task $task)
     {
         $task->delete();
-        
+
         return back()->with('success', '🗑️ Task deleted successfully!');
     }
 
@@ -68,12 +71,12 @@ class TaskController extends Controller
             $task->status = 'Completed';
             $message = '✅ Task marked as completed!';
         } else {
-            $task->status = 'Pending';
+            $task->status = 'Pending'; 
             $message = '⏳ Task marked as pending!';
         }
-        
+
         $task->save();
-        
+
         return back()->with('success', $message);
     }
 }
