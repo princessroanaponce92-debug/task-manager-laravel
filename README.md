@@ -4,7 +4,7 @@
 - Project Code: WST21-PM-2026-SF
 - Student Name: Princess Roana D. Ponce
 - Course & Year: BSIT-2 Section-01
-- Database Used: MySQL
+- Database Used: SQLite
 
 ## Features
 -  Add Task
