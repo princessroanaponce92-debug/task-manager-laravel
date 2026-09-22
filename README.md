@@ -15,7 +15,7 @@
 
 ## Technologies Used
 - **Framework:** Laravel 11
-- **Database:** MySQL
+- **Database:** SQLite
 - **Frontend:** HTML, CSS, Blade Templates
 - **Backend:** PHP
 
