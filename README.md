@@ -13,99 +13,14 @@
 -  Delete Task
 -  Update Status (Pending/Completed)
 
-## Technologies Used
-- **Framework:** Laravel 11
-- **Database:** SQLite
-- **Frontend:** HTML, CSS, Blade Templates
-- **Backend:** PHP
+## SCREENSHOTS FOR UI AND STEOS BY STEPS HOW IT WORKS
+![UI](image.png)
+![Add new task](image-1.png)
+![View Task](image-2.png)
+![Edit task](image-3.png)
+![Marked as done](image-4.png)
+![Delete Task](image-5.png)
 
-## Installation & Setup
+## MY SYSTEM
 
-### Requirements
-- PHP 8.0+
-- Composer
-- MySQL
-
-### Steps
-1. Clone the repository
-```bash
-<<<<<<< HEAD
-   git clone (https://github.com/princessroanaponce92-debug/task-manager-laravel.git)]
-=======
-   git clone [https://github.com/princessroanaponce92-debug/task-manager-laravel.git]
->>>>>>> 0b6de44 (Using SQLite - stable and working perfectly)
-   cd task-manager
-```
-
-2. Install dependencies
-```bash
-   composer install
-```
-
-3. Configure environment
-```bash
-   cp .env.example .env
-   php artisan key:generate
-```
-
-4. Setup database
-```bash
-   mysql -u root -e "CREATE DATABASE task_manager;"
-```
-
-5. Update `.env` file:
-```env
-   DB_CONNECTION=mysql
-   DB_DATABASE=task_manager
-   DB_USERNAME=root
-   DB_PASSWORD=
-```
-
-6. Run migrations
-```bash
-   php artisan migrate
-```
-
-7. Start server
-```bash
-   php artisan serve
-```
-
-8. Open browser: `http://localhost:8000/tasks`
-
-## Project Structure
-
-task-manager/
-├── app/
-│ ├── Models/Task.php
-│ └── Http/Controllers/TaskController.php
-├── resources/
-│ └── views/
-│ ├── layouts/app.blade.php
-│ └── tasks/
-│ ├── index.blade.php
-│ ├── create.blade.php
-│ └── edit.blade.php
-├── routes/web.php
-└── database/migrations/
-
-
-## How It Works
-1. User navigates to `/tasks` to view all tasks
-<<<<<<< HEAD
-2. Click "Add New" Task to create a new task
-3. Enter task details (name, description, due date)
-4. Tasks display in a table with status badge
-5. Use "Edit" button to modify task
-6. Use "Complete" to toggle status
-=======
-2. Click "Add New Task" to create a new task
-3. Enter task details (name, description, due date)
-4. Tasks display in a table with status badge
-5. Use "Edit" button to modify task
-6. Use " Complete" to toggle status
->>>>>>> 0b6de44 (Using SQLite - stable and working perfectly)
-7. Use "Delete" to remove task
-
-## Author
-Princess Roana D. Ponce
+![SYSTEM](image-6.png)
